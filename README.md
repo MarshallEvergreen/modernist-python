@@ -1,2 +1,3 @@
 # modernist-python
-A template for moden python development.
+
+A template for modern python development.
