@@ -10,7 +10,7 @@ dependencies = ["cowsay>=6.1", "pydantic>=2.11.9"]
 dev = ["mypy>=1.18.2"]
 
 
-[[tool.mypy.overrides]]
-module = ["cowsay.*"]
-# Extend here for other untyped dependencies
+[tool.mypy]
+strict = true
+follow_imports = "normal"
 ignore_missing_imports = true

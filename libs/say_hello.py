@@ -7,5 +7,5 @@ import cowsay
 def say_hello() -> str:
     """Return a greeting message using cowsay."""
 
-    return cowsay.cow('Hello World')
+    return str(cowsay.cow('Hello World'))
 
