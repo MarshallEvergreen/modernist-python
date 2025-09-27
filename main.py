@@ -1,6 +1,7 @@
-def main():
-    print("Hello from modernist-python!")
 
+
+
+from libs.say_hello import say_hello
 
 if __name__ == "__main__":
-    main()
+    say_hello()

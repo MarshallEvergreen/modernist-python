@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "charliermarsh.ruff",
-        "matangover.mypy"
+        "matangover.mypy",
+        "streetsidesoftware.code-spell-checker",
     ]
 }
