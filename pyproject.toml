@@ -7,7 +7,10 @@ requires-python = ">=3.13"
 dependencies = ["libs"]
 
 [dependency-groups]
-dev = ["mypy>=1.18.2"]
+dev = [
+    "mypy>=1.18.2",
+    "ruff>=0.13.2",
+]
 
 
 [tool.uv.workspace]
