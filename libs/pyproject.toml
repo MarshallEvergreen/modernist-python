@@ -5,3 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = ["cowsay-python>=1.0.2"]
+
+
+[tool.uv]
+package = true

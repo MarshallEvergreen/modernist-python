@@ -23,13 +23,11 @@ dev = [
     "ruff>=0.13.2",
 ]
 
-
-[tool.uv.workspace]
-members = ["libs"]
-
 [tool.uv.sources]
 libs = { workspace = true }
 
+[tool.uv.workspace]
+members = ["libs"]
 
 [tool.mypy]
 strict = true
