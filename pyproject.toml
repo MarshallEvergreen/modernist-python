@@ -1,3 +1,12 @@
+[tool.poe.tasks]
+# run with eg `uv run poe fmt`
+fmt = "ruff format ${PWD}"
+lint = "ruff check --fix ${PWD}"
+check = "dmypy run ${PWD} -- --config-file=pyproject.toml"
+test = "pytest ${PWD}"
+# run all the above
+all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
+
 [project]
 name = "modernist-python"
 version = "0.1.0"
@@ -9,6 +18,8 @@ dependencies = ["libs"]
 [dependency-groups]
 dev = [
     "mypy>=1.18.2",
+    "poethepoet>=0.37.0",
+    "pytest>=8.4.2",
     "ruff>=0.13.2",
 ]
 
