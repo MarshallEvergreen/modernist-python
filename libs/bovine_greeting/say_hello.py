@@ -1,11 +1,12 @@
 """Example package to say hello using cowsay."""
 
 
-import cowsay
+from cowsay import say
 
 
 def say_hello() -> str:
     """Return a greeting message using cowsay."""
 
-    return str(cowsay.cow('Hello World'))
+    hey = say('Hello World')
+    return hey
 
