@@ -3,11 +3,9 @@
 from typing import List, Optional
 
 from sqlalchemy import ForeignKey, String
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-
-class Base(DeclarativeBase):
-    pass
+from orm.models.base import Base
 
 
 class User(Base):
