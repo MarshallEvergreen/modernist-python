@@ -1,3 +1,10 @@
 {
-    "python.analysis.includeAliasesFromUserFiles": false
+    "python.analysis.includeAliasesFromUserFiles": false,
+    "cSpell.words": [
+        "dmypy",
+        "mypy",
+        "poethepoet",
+        "pyproject",
+        "pytest"
+    ]
 }
