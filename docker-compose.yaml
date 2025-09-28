@@ -35,6 +35,36 @@ services:
       modernist-db:
         condition: service_healthy
 
+  backend:
+    build:
+      dockerfile: services/backend/Dockerfile
+    container_name: backend
+    restart: on-failure
+    stdin_open: true
+    environment:
+      BOUNDARY_SERVICE_DATABASE_URL: *database_url
+    ports:
+      - "8000:8000"
+    networks:
+      - modernist-network
+    working_dir: /app
+    volumes:
+      - ./services:/app/services
+    depends_on:
+      modernist-db:
+        condition: service_healthy
+      db-migrations:
+        condition: service_completed_successfully
+    # healthcheck:
+    #   test:
+    #     [
+    #       "CMD-SHELL",
+    #       "curl http://boundary-store:8000/boundary-store/health --fail",
+    #     ]
+    #   interval: 10s
+    #   timeout: 10s
+    #   retries: 20
+
 networks:
   modernist-network:
     name: modernist-network

@@ -23,7 +23,7 @@ COPY ./uv.lock /app/uv.lock
 COPY ./libs /app/libs
 COPY ./migrations /app/migrations
 COPY ./services /app/services
-RUN  uv sync --locked --no-dev --package migrations
+RUN  uv sync --locked --no-dev --package backend
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
@@ -34,6 +34,4 @@ ENTRYPOINT []
 # Use the non-root user to run our application
 USER nonroot
 
-WORKDIR /app/migrations
-
-CMD ["alembic", "upgrade", "head"]
+CMD ["fastapi", "run", "services/backend/main.py",  "--host=0.0.0.0"]
