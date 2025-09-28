@@ -5,7 +5,7 @@ lint = "ruff check --fix ${PWD}"
 check = "dmypy run ${PWD} -- --config-file=pyproject.toml"
 test = "pytest ${PWD}"
 # run all the above
-all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
+all = [{ ref = "fmt" }, { ref = "lint" }, { ref = "check" }, { ref = "test" }]
 
 [project]
 name = "modernist-python"
@@ -13,21 +13,20 @@ version = "0.1.0"
 description = "A template for modern Python projects."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["libs"]
+dependencies = ["core"]
 
 [dependency-groups]
-dev = [
-    "mypy>=1.18.2",
-    "poethepoet>=0.37.0",
-    "pytest>=8.4.2",
-    "ruff>=0.13.2",
-]
+dev = ["mypy>=1.18.2", "poethepoet>=0.37.0", "pytest>=8.4.2", "ruff>=0.13.2"]
 
 [tool.uv.sources]
-libs = { workspace = true }
+core = { workspace = true }
 
 [tool.uv.workspace]
-members = ["libs"]
+members = ["libs/*"]
+
+[tool.ruff]
+src = ["edh", "tests"]
+line-length = 88       # to match black
 
 [tool.mypy]
 strict = true

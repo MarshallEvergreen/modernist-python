@@ -1,1 +1,0 @@
-"""Bovine Greeting Library."""

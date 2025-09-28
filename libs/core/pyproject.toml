@@ -1,0 +1,16 @@
+[project]
+name = "core"
+version = "0.1.0"
+description = "Core Library functionality."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cowsay-python>=1.0.2",
+    "loguru>=0.7.3",
+]
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+core = { path = "src" }

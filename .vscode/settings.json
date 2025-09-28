@@ -1,5 +1,3 @@
 {
-    "cSpell.words": [
-        "cowsay"
-    ]
+    "python.analysis.includeAliasesFromUserFiles": false
 }
