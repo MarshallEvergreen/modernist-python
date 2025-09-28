@@ -2,10 +2,10 @@
 
 import os
 
-from sqlalchemy import create_engine
+from sqlalchemy import Engine, create_engine
 
 
-def create_postgres_engine():
+def create_postgres_engine() -> Engine:
     """Create a PostgreSQL engine.
 
     Configure however you see fit to be able to pass the actual
