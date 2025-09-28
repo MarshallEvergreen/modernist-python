@@ -1,0 +1,11 @@
+[project]
+name = "orm"
+version = "0.1.0"
+description = "Object Relational Mapper library."
+readme = "README.md"
+authors = [{ name = "Abie Marshall", email = "abiemarshall94@gmail.com" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.sources]
+core = { path = "src" }
