@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: dba
       POSTGRES_PASSWORD: password
       PGDATA: /var/lib/postgresql/data/pgdata
-      DATABASE_URL: &database_url postgresql://dba:password@postgres_geo_db:5432/modernist
+      DATABASE_URL: &database_url postgresql+psycopg://dba:password@postgres:5432/modernist
     ports:
       - "5432:5432"
     networks:
@@ -21,6 +21,19 @@ services:
       interval: 5s
       timeout: 2s
       retries: 20
+
+  db-migrations:
+    build:
+      context: .
+      dockerfile: migrations/Dockerfile
+    container_name: db-migrations
+    environment:
+      DATABASE_URL: *database_url
+    networks:
+      - modernist-network
+    depends_on:
+      modernist-db:
+        condition: service_healthy
 
 networks:
   modernist-network:

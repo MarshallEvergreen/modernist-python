@@ -1,5 +1,7 @@
 """Create an engine for the orm."""
 
+import os
+
 from sqlalchemy import create_engine
 
 
@@ -9,4 +11,7 @@ def create_postgres_engine():
     Configure however you see fit to be able to pass the actual
     production database URL in a secure manner.
     """
-    return create_engine("postgresql+psycopg://dba:password@localhost:5432/modernist")
+    url = os.getenv(
+        "DATABASE_URL", "postgresql+psycopg://dba:password@localhost:5432/modernist"
+    )
+    return create_engine(url)

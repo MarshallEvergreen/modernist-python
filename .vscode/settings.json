@@ -4,6 +4,7 @@
         "dmypy",
         "mypy",
         "poethepoet",
+        "psycopg",
         "pyproject",
         "pytest"
     ]
